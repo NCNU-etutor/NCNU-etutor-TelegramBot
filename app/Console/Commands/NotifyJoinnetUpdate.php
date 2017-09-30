@@ -57,7 +57,7 @@ class NotifyJoinnetUpdate extends Command
         if ($file_version != $last_version) {
             Telegram::sendMessage([
                 'chat_id' => env('ETUTOR_GROUP'),
-                'text' => 'Joinnet 版本更新為 ' . $file_version . '，請抽空更新 ^^'
+                'text' => 'Joinnet 版本更新為 ' . $file_version . '，請抽空更新 ^^' . PHP_EOL . PHP_EOL . '#joinnet'
             ]);
 
             Storage::disk('local')->put('joinnet-latest-version', $file_version);
